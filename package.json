@@ -1,7 +1,7 @@
 {
   "name": "packer",
   "version": "1.0.0",
-  "description": "A library that helps optimal pack items into a package of specified weight",
+  "description": "A library that helps optimally pack items into a package of specified weight",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {

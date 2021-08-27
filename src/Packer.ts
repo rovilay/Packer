@@ -67,7 +67,7 @@ export default class Packer {
     /**
      * parses a line read from the file
      *
-     * @param line file line data
+     * @param line data for a package
      * @returns
      */
     private static parseFileLine(line: string): IPackage {
@@ -151,7 +151,7 @@ export default class Packer {
     }
 
     /**
-     * process package data
+     * processes package data
      *
      * @param pkg package to process
      * @returns
@@ -209,15 +209,15 @@ export default class Packer {
             packageWeight,
             costBoard,
         );
-        let costWithItem: number = 0;
 
         const {
             weight: itemWeight,
             price: itemPrice,
         }: IPackageItem = items[currentItemIndex - 1]
-            || { index: 0, weight: 0, price: 0 }; // current item
+        || { index: 0, weight: 0, price: 0 }; // item
 
         // calculate cost while including item
+        let costWithItem: number = 0;
         if (itemWeight <= packageWeight) {
             const newWeight: number = Math.round(packageWeight - itemWeight);
             costWithItem = itemPrice + this.calculatePackageCost(
@@ -251,7 +251,7 @@ export default class Packer {
         const itemsIndex: number[] = [];
 
         for (let i = items.length; i > 0 && cost > 0; i -= 1) {
-            // if the cost is the same as the prevItemCost `costBoard[i - 1][weight]`
+            // if the cost is not the same as the prevItemCost `costBoard[i - 1][weight]`
             // it means the current item was included in the cost
             const prevItemCost: number = costBoard[i - 1][weight];
             if (cost !== prevItemCost) {
