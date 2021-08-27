@@ -24,7 +24,9 @@
         "@typescript-eslint/indent": ["error", 4],
         "camelcase": [2, { "properties": "always" }],
         "@typescript-eslint/no-inferrable-types": "off",
-        "no-useless-escape": "off"
+        "no-useless-escape": "off",
+        "no-path-concat": "off",
+        "no-param-reassign": "off"
     },
     "overrides": [
         {

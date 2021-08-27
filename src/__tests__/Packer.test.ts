@@ -3,7 +3,7 @@ import Packer from '../Packer';
 describe('Packer', (): void => {
     it('should pack items', async (): Promise<void> => {
         const expectedResult: string = ['4', '-', '2,7', '8,9'].join('\n');
-        const result: string = await Packer.pack(__dirname + '/__mocks__/test-data.txt');
+        const result: string = await Packer.pack(`${__dirname}/__mocks__/test-data.txt`);
         expect(result).toEqual(expectedResult);
     });
 
