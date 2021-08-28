@@ -160,7 +160,9 @@ export default class Packer {
         const { weight: maxWeight, items }: IPackage = pkg;
 
         // sort items by weight
-        items.sort((item1, item2): number => item1.weight - item2.weight);
+        items.sort(
+            (item1: IPackageItem, item2: IPackageItem): number => item1.weight - item2.weight,
+        );
 
         // create costBoard for memoization
         const costBoard: number[][] = new Array(items.length + 1);
@@ -271,7 +273,7 @@ export default class Packer {
         }
 
         // sort by index
-        itemsIndex.sort((indx1, indx2): number => indx1 - indx2);
+        itemsIndex.sort((indx1: number, indx2: number): number => indx1 - indx2);
 
         return itemsIndex.join(',') || '-';
     }

@@ -51,14 +51,14 @@ Packer.pack('/path/to/file/example.txt')
 
 - cd to the project that wants to use this library
 - run  `npm link packer`
-- import the `Packer` to use.
+- import the `packer` library to use.
 
 ### NPM
 - ensure you have a [npm](https://www.npmjs.com/) account
 - cd to project folder
 - run `npm install`
 - run `npm run build`
-- run `npm login` and login with your credentials
+- run `npm login` and login with your npm credentials
 - run `npm publish`.
 - confirm the publish on npm
 
